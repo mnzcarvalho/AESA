@@ -1,1 +1,1 @@
-![Fluxograma-LOJA drawio (2)](https://github.com/user-attachments/assets/5efa18d1-7a58-4a0f-b45e-0054e4faacfb)
+![Fluxograma drawio](https://github.com/user-attachments/assets/21df685d-6dcd-4fe6-a5b5-6f2b024ff720)
