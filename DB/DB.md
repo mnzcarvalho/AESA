@@ -27,7 +27,7 @@ id_equipe integer,
 foreign key(id_equipe) references equipes(id_equipe)
 );
 
-create table funcionario_tarefas(
+create table funcionarios_tarefas(
 id_funcionario integer,
 id_tarefas integer,
 primary key(id_funcionario, id_tarefas),
@@ -58,7 +58,7 @@ id_venda integer,
 foreign key(id_venda) references vendas(id_venda)
 );
 
-create table categoria_produtos(
+create table categorias_produtos(
 id_categoria integer,
 id_produto integer,
 primary key(id_categoria, id_produto),
