@@ -13,7 +13,7 @@ data_criacao date
 );
 
 create table tarefas(
-id_tarefas integer not null AUTO_INCREMENT PRIMARY KEY,
+id_tarefa integer not null AUTO_INCREMENT PRIMARY KEY,
 titulo varchar(100),
 descricao text,
 prazo date
@@ -29,10 +29,10 @@ foreign key(id_equipe) references equipes(id_equipe)
 
 create table funcionarios_tarefas(
 id_funcionario integer,
-id_tarefas integer,
-primary key(id_funcionario, id_tarefas),
+id_tarefa integer,
+primary key(id_funcionario, id_tarefa),
 foreign key(id_funcionario) references funcionarios(id_funcionario),
-foreign key(id_tarefas) references tarefas(id_tarefas)
+foreign key(id_tarefa) references tarefas(id_tarefa)
 );
 
 create table fornecedores(
@@ -53,9 +53,7 @@ status varchar(20)
 create table produtos(
 id_produto integer not null AUTO_INCREMENT PRIMARY KEY,
 nome_produto varchar(100),
-preco decimal(10,2),
-id_venda integer,
-foreign key(id_venda) references vendas(id_venda)
+preco decimal(10,2)
 );
 
 create table categorias_produtos(
@@ -96,4 +94,13 @@ tipo_pagamento varchar(50),
 parcelas integer,
 valor_pago decimal(10,2),
 foreign key(id_venda) references vendas(id_venda)
+);
+
+create table vendas_produtos(
+id_venda integer,
+id_produto integer,
+quantidade integer,
+primary key (id_venda, id_produto),
+foreign key (id_venda) references vendas(id_venda),
+foreign key (id_produto) references produtos(id_produto)
 );
